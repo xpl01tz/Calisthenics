@@ -95,7 +95,7 @@ export function RestTimer({ open, onClose }: RestTimerProps) {
           />
         </svg>
         <div className="absolute flex flex-col items-center">
-          <span className="font-mono text-6xl font-bold tabular-nums text-foreground">
+          <span className="text-6xl font-bold tabular-nums text-foreground">
             {mins}:{secs.toString().padStart(2, "0")}
           </span>
           <span className="mt-1 text-sm text-muted-foreground">{finished ? "Done — get back to it" : "remaining"}</span>

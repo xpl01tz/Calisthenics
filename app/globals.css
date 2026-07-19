@@ -1,3 +1,6 @@
+html, body {
+  overscroll-behavior-y: none;
+}
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';

@@ -290,7 +290,7 @@ function SortableExercise({
                   onChange={(e) => onValue(ex.id, i, e.target.value)}
                   placeholder={prevVal != null ? `prev: ${prevVal}` : ex.type === "reps" ? "reps" : "sec"}
                   aria-label={`${ex.name} set ${i + 1} ${ex.type === "reps" ? "reps" : "seconds"}`}
-                  className="h-12 w-full rounded-xl border border-input bg-background px-4 font-mono text-base tabular-nums text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="h-12 w-full rounded-xl border border-input bg-background px-4 text-base tabular-nums text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               {prevVal != null && (

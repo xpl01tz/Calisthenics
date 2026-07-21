@@ -82,6 +82,8 @@ export function HomeApp() {
         <HistoryView />
       )}
       <BottomNav active={view} onNavigate={setView} />
+            <ExitToast />
+     
       {splashMounted && <SplashScreen fadingOut={showSplash === false} />}
     </>
   )

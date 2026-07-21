@@ -27,6 +27,15 @@ export function HomeApp() {
     return () => clearTimeout(t)
   }, [])
 
+  useEffect(() => {
+    initBackNavigation()
+  }, [])
+  const onNonDashboardScreen = activeId !== null || view === "history"
+  useBackClose(onNonDashboardScreen, () => {
+    if (activeId !== null) setActiveId(null)
+    else setView("dashboard")
+  })
+
   const showSplash = !loaded || !minTimeElapsed
 
   useEffect(() => {

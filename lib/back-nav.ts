@@ -40,7 +40,9 @@ function handlePopState() {
 export function initBackNavigation() {
   if (initialized) return
   initialized = true
-  window.history.pushState({ appRoot: true }, "")
+  if (!(window.history.state && window.history.state.appRoot)) {
+    window.history.pushState({ appRoot: true }, "")
+  }
   window.addEventListener("popstate", handlePopState)
 }
 

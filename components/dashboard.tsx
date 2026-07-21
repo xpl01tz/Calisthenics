@@ -25,6 +25,7 @@ import { computeStreak } from "@/lib/stats"
 import { RoutineCard } from "@/components/routine-card"
 import { RoutineEditor } from "@/components/routine-editor"
 import { SettingsMenu } from "@/components/settings-menu"
+import { useBackClose } from "@/lib/use-back-close"
 
 type Props = {
   routines: Routine[]
@@ -53,6 +54,9 @@ export function Dashboard({ routines, loaded, onStart, onSave, onDelete, onReord
   useEffect(() => {
     if (manageMode && routines.length === 0) setManageMode(false)
   }, [manageMode, routines.length])
+
+  useBackClose(editing !== null, () => setEditing(null))
+  useBackClose(settingsOpen, () => setSettingsOpen(false))
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event

@@ -26,6 +26,7 @@ import { useLongPress } from "@/lib/use-long-press"
 import { RestTimer } from "@/components/rest-timer"
 import { ConfirmDialog } from "@/components/confirm-dialog"
 import { cn } from "@/lib/utils"
+import { useBackClose } from "@/lib/use-back-close"
 
 type Values = Record<string, (number | null)[]>
 
@@ -61,6 +62,9 @@ export function WorkoutClient({
     if (last) for (const ex of last.exercises) map[ex.id] = ex
     return map
   }, [last])
+
+  useBackClose(timerOpen, () => setTimerOpen(false))
+  useBackClose(pendingDelete !== null, () => setPendingDelete(null))
 
   // Dragging is only ever started from the dedicated handle (which is
   // `touch-none`), so we use a tiny distance constraint instead of a hold

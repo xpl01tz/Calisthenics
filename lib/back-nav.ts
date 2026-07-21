@@ -50,7 +50,7 @@ export function subscribeExitToast(fn: (show: boolean) => void) {
 }
 
 export function pushBackLayer(onClose: CloseHandler) {
-  window.history.pushState({ appLayer: true }, "")
+  window.history.replaceState({ appRoot: true }, "")
   stack.push(onClose)
 }
 

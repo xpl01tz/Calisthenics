@@ -1,5 +1,5 @@
 // PushLog service worker — offline-first caching for the PWA.
-const CACHE = "calisthenics-tracker-cache-v2"
+const CACHE = "calisthenics-tracker-cache-v3"
 const PRECACHE = ["/", "/manifest.webmanifest", "/icon.svg", "/icon-192.png", "/icon-512.png", "/apple-icon.png"]
 
 self.addEventListener("install", (event) => {

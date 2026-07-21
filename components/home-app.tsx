@@ -7,6 +7,9 @@ import { HistoryView } from "@/components/history-view"
 import { WorkoutClient } from "@/components/workout-client"
 import { BottomNav, type NavView } from "@/components/bottom-nav"
 import { SplashScreen } from "@/components/splash-screen"
+import { ExitToast } from "@/components/exit-toast"
+import { initBackNavigation } from "@/lib/back-nav"
+import { useBackClose } from "@/lib/use-back-close"
 
 // Minimum time the splash stays up so app launch always feels intentional,
 // even when local data loads instantly (avoids an imperceptible flash).
